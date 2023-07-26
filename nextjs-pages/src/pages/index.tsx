@@ -1,9 +1,11 @@
-
+import styles from './../styles/Home.module.scss';
+import Navbar from '@/components/navbar/Navbar';
   
 export default function Home() {
   return (
-    <main className="flex items-center justify-center min-h-screen">
-      Populate me with Sanity Content
+    <main className={styles.main}>
+      <Navbar/>
+      Populate me with Sanity Content test
     </main>
   )
 }
