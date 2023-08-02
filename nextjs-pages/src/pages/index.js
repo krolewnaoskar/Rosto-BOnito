@@ -4,11 +4,20 @@ import { createClient } from 'next-sanity';
 import PortableText from "react-portable-text";
 
 export default function Home(pet) {
-  console.log(pet);
+  let name = pet.pet;
+  console.log(name.length)
+  let img = name.Image;
+
+
+
+  console.log(Array.isArray(pet))
   return (
     <main className={styles.main}>
       <Navbar />
-
+      {name.map(item => {
+        return <p>{item.name}</p>
+      })}
+      <img src='' alt="" />
     </main>
   )
 }
