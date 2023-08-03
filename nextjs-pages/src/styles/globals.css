@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-h2 {
-    font-size:22px
+
+
+h1 {
+    font-size:4.5rem;
+    font-weight: 700;
 }
+
+h2 {font-size: 2rem;}
 
 main {
     max-width: 1986px;
-    margin:0 auto
+    margin: 0 auto;
 }
 
 main .wrapper {
