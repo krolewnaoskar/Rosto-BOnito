@@ -1,0 +1,32 @@
+.header {
+    background-image: url('../../assets/rosto-bonito.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 768px;
+    padding: 20px;
+
+    &_title {
+        display: flex;
+        align-items: center;
+
+        .content_title {
+            width: 100%;
+            color: goldenrod;
+            padding-right: 100px;
+        }
+
+        .main_title {
+            width: 100%;
+            text-align: center;
+            letter-spacing: 4px;
+
+
+            &+h2 {
+                text-align: center;
+                letter-spacing: 6px;
+            }
+        }
+    }
+}
