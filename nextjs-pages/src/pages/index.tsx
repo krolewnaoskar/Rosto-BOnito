@@ -1,6 +1,7 @@
 import { createClient } from "next-sanity";
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from "react";
 import Navbar from "@/components/navbar/Navbar";
+import Header from "@/components/header/Header"
 
 export default function Home(data: any) {
 
@@ -16,14 +17,19 @@ export default function Home(data: any) {
   return (
     <main >
       <Navbar navbar={navList.navbar} />
+      <Header />
+      <div className="wrapper">
 
-      <ol>
-        {data && navList.home.map((item: any, index: any) => {
-          return (
-            <li key={index}>{item.name}</li>
-          )
-        })}
-      </ol>
+        <ol>
+          {data && navList.home.map((item: any, index: any) => {
+            return (
+              <li key={index}>{item.name}</li>
+            )
+          })}
+        </ol>
+      </div>
+
+
     </main>
   )
 }

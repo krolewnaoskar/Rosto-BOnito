@@ -5,3 +5,13 @@
 h2 {
     font-size:22px
 }
+
+main {
+    max-width: 1986px;
+    margin:0 auto
+}
+
+main .wrapper {
+    width: 100%;
+    padding:20px;
+}
