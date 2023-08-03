@@ -1,14 +1,32 @@
 import { createClient } from "next-sanity";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from "react";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from "react";
+import Navbar from "@/components/navbar/Navbar";
 
-export default function Home(home: any) {
-  let test = home;
-  console.log(test.home)
+export default function Home(data: any) {
+
+  let navList = data.data;
+  console.log(navList.home.length)
+  console.log(navList.home)
+
+
+
+
+  console.log(navList.length)
+
   return (
     <main >
-      {test.home.map((item: any, index: any) => {
-        return <h2 key={index}>{item.name}</h2>
+      {data && navList.navbar.map((item: any, index: any) => {
+        return (
+          <li key={index}>{item.link}</li>
+        )
       })}
+      <ol>
+        {data && navList.home.map((item: any, index: any) => {
+          return (
+            <li key={index}>{item.name}</li>
+          )
+        })}
+      </ol>
     </main>
   )
 }
@@ -20,11 +38,25 @@ export async function getStaticProps(context: any) {
     useCdn: true
   });
   const query = `*[_type == "pet"]`;
-  const home = await client.fetch(query);
+  console.log(query)
+  const queryNavbar = `*[_type == "navbar"]`;
+  console.log('Navbar');
+  //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  const navbar = await client.fetch(queryNavbar
+  )
+  const home = await client.fetch(query
+  )
+
+
+
   return {
-    props:
-    {
-      home
+    props: {
+      data: {
+        'navbar': navbar,
+        'home': home
+      }
+
     }
   }
 }
