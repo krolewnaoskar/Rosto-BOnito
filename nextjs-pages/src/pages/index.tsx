@@ -15,11 +15,8 @@ export default function Home(data: any) {
 
   return (
     <main >
-      {data && navList.navbar.map((item: any, index: any) => {
-        return (
-          <li key={index}>{item.link}</li>
-        )
-      })}
+      <Navbar navbar={navList.navbar} />
+
       <ol>
         {data && navList.home.map((item: any, index: any) => {
           return (
@@ -38,9 +35,9 @@ export async function getStaticProps(context: any) {
     useCdn: true
   });
   const query = `*[_type == "pet"]`;
-  console.log(query)
+
   const queryNavbar = `*[_type == "navbar"]`;
-  console.log('Navbar');
+
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const navbar = await client.fetch(queryNavbar
