@@ -21,12 +21,15 @@ const Header = (props: any) => {
                 <div className={styles.content_title}>
                     <h1 className={styles.main_title}>ROSTO BONITO</h1>
                     <h2>Magdalena Zathey</h2>
+
                 </div>
-
             </div>
-
-
-
+            <div className={styles.description}>
+                <h2>JAPOŃSKI LIFTING TWARZY MASAŻE KLASYCZNE W KRAKOWIE</h2>
+            </div>
+            <div className={styles.description_second}>
+                <h2>Każdy ruch to cel</h2>
+            </div>
         </header>
     )
 }
