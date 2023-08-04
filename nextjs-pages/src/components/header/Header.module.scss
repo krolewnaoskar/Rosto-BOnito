@@ -7,8 +7,7 @@ $gold: #EECC7A;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 768px;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     font-family: 'Aboreto', sans-serif;
 
     &_title {
@@ -47,20 +46,37 @@ $gold: #EECC7A;
         h2 {
             margin-top: 40px;
             text-align: center;
-            font-size: 62px;
+            font-size: 56px;
         }
     }
 
     .description_second {
         width: 60%;
-        padding-top: 10px;
         margin: 0 auto;
 
         h2 {
             color: goldenrod;
             font-weight: 200;
             text-align: center;
-            font-size: 68px;
+            font-size: 62px;
+            letter-spacing: 8px;
+            margin: 60px 0 60px;
+            padding-bottom: 40px;
         }
+    }
+
+    &_phone {
+        position: relative;
+        bottom: 0;
+        height: 160px;
+        background: rgba(255, 255, 255, 0.4178046218) 35%;
+        margin-right: -20px;
+        margin-left: -20px;
+        margin-top: 80px;
+        font-size: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 }

@@ -30,6 +30,9 @@ const Header = (props: any) => {
             <div className={styles.description_second}>
                 <h2>Każdy ruch to cel</h2>
             </div>
+            <div className={styles.header_phone}>
+                <p>+48530907750</p>
+            </div>
         </header>
     )
 }
