@@ -18,18 +18,6 @@ export default function Home(data: any) {
     <main >
       <Navbar navbar={navList.navbar} />
       <Header />
-      <div className="wrapper">
-
-        <ol>
-          {data && navList.home.map((item: any, index: any) => {
-            return (
-              <li key={index}>{item.name}</li>
-            )
-          })}
-        </ol>
-      </div>
-
-
     </main>
   )
 }
