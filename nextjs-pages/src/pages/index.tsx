@@ -6,6 +6,8 @@ import Header from "@/components/header/Header"
 export default function Home(data: any) {
 
   let navList = data.data;
+
+  console.log(data)
   console.log(navList.home.length)
   console.log(navList.home)
 
@@ -39,15 +41,12 @@ export async function getStaticProps(context: any) {
   const home = await client.fetch(query
   )
 
-
-
   return {
     props: {
       data: {
         'navbar': navbar,
         'home': home
       }
-
     }
   }
 }
