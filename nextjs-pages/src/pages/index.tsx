@@ -1,20 +1,12 @@
 import { createClient } from "next-sanity";
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from "react";
 import Navbar from "@/components/navbar/Navbar";
-import Header from "@/components/header/Header"
+import Header from "@/components/header/Header";
+import Image from "next/image";
 
 export default function Home(data: any) {
 
   let navList = data.data;
-
-  console.log(data)
-  console.log(navList.home.length)
-  console.log(navList.home)
-
-
-
-
-  console.log(navList.length)
 
   return (
     <main >
@@ -33,19 +25,23 @@ export async function getStaticProps(context: any) {
   const query = `*[_type == "pet"]`;
 
   const queryNavbar = `*[_type == "navbar"]`;
-
+  const img = `*[_type == "pet"]{
+    "imageUrl": Image.asset->url
+  }`
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const navbar = await client.fetch(queryNavbar
   )
   const home = await client.fetch(query
   )
+  const imgFetch = await client.fetch(img)
 
   return {
     props: {
       data: {
         'navbar': navbar,
-        'home': home
+        'home': home,
+        'imgUlr': imgFetch
       }
     }
   }
