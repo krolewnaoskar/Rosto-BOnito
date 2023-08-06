@@ -3,11 +3,19 @@
 
     h2 {
         font-size: 42px;
-
+        margin-bottom: 20px;
     }
 
     P {
         font-size: 22px;
+    }
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: goldenrod;
+        display: block;
     }
 
 }

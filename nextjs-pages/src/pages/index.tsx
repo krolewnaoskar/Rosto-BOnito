@@ -3,7 +3,7 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLik
 import Navbar from "@/components/navbar/Navbar";
 import Header from "@/components/header/Header";
 import Image from "next/image";
-import Section from "@/components/section/section";
+import Section from "@/components/section/Section";
 
 const cssBackground = {
   section1: 'face_massage',
@@ -19,8 +19,8 @@ export default function Home(data: any) {
     <main >
       <Navbar navbar={navList.navbar} />
       <Header />
-      <Section css={cssBackground.section1} name="MASAŻE TWARZY" description="OPRACOWANE NA PODSTAWIE ORYGINALNYCH TECHNIK DR. SHOGO MOCHIZUKI KOBIDOTOKYO JAPAN" />
-      <Section css={cssBackground.section2} />
+      <Section css={cssBackground.section1} name="MASAŻE TWARZY" description="OPRACOWANE NA PODSTAWIE ORYGINALNYCH TECHNIK DR. SHOGO MOCHIZUKI KOBIDOTOKYO JAPAN" label="azjatycka pielęgnacja" title="JAPONSKI MASAZ TWARZY +" />
+      <Section css={cssBackground.section2} name="MASAZE KLASYCZNE" />
       <Section css={cssBackground.section3} />
     </main>
   )
