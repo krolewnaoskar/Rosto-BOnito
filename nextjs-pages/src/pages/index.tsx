@@ -3,6 +3,13 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLik
 import Navbar from "@/components/navbar/Navbar";
 import Header from "@/components/header/Header";
 import Image from "next/image";
+import Section from "@/components/section/section";
+
+const cssBackground = {
+  section1: 'face_massage',
+  section2: 'classic_massage',
+  section3: 'before_massage'
+}
 
 export default function Home(data: any) {
 
@@ -12,6 +19,9 @@ export default function Home(data: any) {
     <main >
       <Navbar navbar={navList.navbar} />
       <Header />
+      <Section css={cssBackground.section1} name="MASAŻE TWARZY" description="OPRACOWANE NA PODSTAWIE ORYGINALNYCH TECHNIK DR. SHOGO MOCHIZUKI KOBIDOTOKYO JAPAN" />
+      <Section css={cssBackground.section2} />
+      <Section css={cssBackground.section3} />
     </main>
   )
 }
