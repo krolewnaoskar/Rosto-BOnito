@@ -14,6 +14,8 @@ const cssBackground = {
 export default function Home(data: any) {
 
   let navList = data.data;
+  console.log('NavList')
+  console.log(navList)
 
   return (
     <main >
@@ -37,7 +39,8 @@ export async function getStaticProps(context: any) {
   const queryNavbar = `*[_type == "navbar"]`;
   const img = `*[_type == "pet"]{
     "imageUrl": Image.asset->url
-  }`
+  }`;
+  const sectionTitle = `*[_type == 'section-title']`
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const navbar = await client.fetch(queryNavbar
@@ -45,13 +48,15 @@ export async function getStaticProps(context: any) {
   const home = await client.fetch(query
   )
   const imgFetch = await client.fetch(img)
+  const sectionTitleFetch = await client.fetch(sectionTitle)
 
   return {
     props: {
       data: {
         'navbar': navbar,
         'home': home,
-        'imgUlr': imgFetch
+        'imgUlr': imgFetch,
+        'sectionTitle': sectionTitleFetch
       }
     }
   }
