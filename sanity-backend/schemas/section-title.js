@@ -13,6 +13,6 @@ export default {
             name: 'description',
             type: 'string',
             title: 'Opis'
-        },
+        }
     ]
 }

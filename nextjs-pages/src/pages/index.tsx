@@ -13,17 +13,17 @@ const cssBackground = {
 
 export default function Home(data: any) {
 
-  let navList = data.data;
+  let dataSanity = data.data;
+  const massageData = dataSanity.faceMassage;
   console.log('NavList')
-  console.log(navList)
+  console.log(massageData)
 
   return (
     <main >
-      <Navbar navbar={navList.navbar} />
+      <Navbar navbar={dataSanity.navbar} />
       <Header />
-      <Section css={cssBackground.section1} name="MASAŻE TWARZY" description="OPRACOWANE NA PODSTAWIE ORYGINALNYCH TECHNIK DR. SHOGO MOCHIZUKI KOBIDOTOKYO JAPAN" label="azjatycka pielęgnacja" title="JAPONSKI MASAZ TWARZY +" />
-      <Section css={cssBackground.section2} name="MASAZE KLASYCZNE" />
-      <Section css={cssBackground.section3} />
+      <Section css={cssBackground.section1} massageData={massageData} />
+
     </main>
   )
 }
@@ -40,7 +40,8 @@ export async function getStaticProps(context: any) {
   const img = `*[_type == "pet"]{
     "imageUrl": Image.asset->url
   }`;
-  const sectionTitle = `*[_type == 'section-title']`
+  const sectionTitle = `*[_type == 'section-title']`;
+  const faceMassageQuery = `*[_type == 'faceMassage']`;
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const navbar = await client.fetch(queryNavbar
@@ -48,7 +49,8 @@ export async function getStaticProps(context: any) {
   const home = await client.fetch(query
   )
   const imgFetch = await client.fetch(img)
-  const sectionTitleFetch = await client.fetch(sectionTitle)
+  const sectionTitleFetch = await client.fetch(sectionTitle);
+  const faceMassageFetch = await client.fetch(faceMassageQuery);
 
   return {
     props: {
@@ -56,7 +58,8 @@ export async function getStaticProps(context: any) {
         'navbar': navbar,
         'home': home,
         'imgUlr': imgFetch,
-        'sectionTitle': sectionTitleFetch
+        'sectionTitle': sectionTitleFetch,
+        'faceMassage': faceMassageFetch
       }
     }
   }

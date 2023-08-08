@@ -6,12 +6,13 @@ import styles from './Section.module.scss'
 import MassageFaceComponent from "../masageFaceComponent/MassageFaceComponent";
 
 const Section = (props: any) => {
+    const data = props.massageData
     const cssBackground = props.css;
     return (
         <section className={`${styles.section_main} ${styles[cssBackground]}`}>
             <SectionTitle name={props.name} description={props.description}></SectionTitle>
-            <MassageFaceComponent title={props.title} label={props.label} />
-            <MassageFaceComponent title={props.title} label={props.label} />
+            <MassageFaceComponent messageData={data} />
+
         </section>
 
     )
