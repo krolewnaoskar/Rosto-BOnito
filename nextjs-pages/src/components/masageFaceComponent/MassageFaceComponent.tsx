@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styles from './MassageFaceComponent.module.scss'
 
 interface test {
@@ -6,22 +7,24 @@ interface test {
 }
 
 const MassageFaceComponent = (props: any) => {
+    const [data, setData] = useState(props.messageData)
+
+    console.log("Facemassage")
+    console.log(data)
     return (
-        <div className={styles.massage}>
-            <h2>{props.title} <span>{props.label}</span></h2>
-            <p>Zabieg zaczyna się kilkuetapową pielęgnacją twarzy
-                w g. standardów azjatyckich , kosmetykami gabinetowym i wysokiej jakości .
-                W trakcie wykonywany jest cudowny masaż głowy .</p>
-            <h3>ETAP GŁOWNY</h3>
-            <p>Rozluźnianie i naciąganie mięśni , drenaż limfatyczny ,
-                LIFTING , energetyzowanie .</p>
-            <h3>EFEKTY</h3>
-            <p>Redukcja obrzęków , przywrócenie naturalnego owalu twarzy , spłycenie zmarszczek ,
-                ujędrnienie rozjaśnienie skóry , rozluźnienie mięśni twarzy , szyi oraz karku , leczenie
-                bruksismu , głęboki relaks , ogólne przywrócenie dobrostanu organizmu.</p>
-            <p>120 MINUT <span>250zł</span></p>
-        </div>
-    )
+        <> {data && data.map((item: any, index: any) => {
+            return (<div className={styles.massage} key={index} >
+                <h2>{item.title} <span>{item.titleColor}</span></h2>
+                <p>{item.description}</p>
+                <h3>{item.etap}</h3>
+                <p>{item.etapDescription}</p>
+                <h3>{item.effects}</h3>
+                <p>{item.effectsDescription}</p>
+                <p>{item.time} <span>{item.price}</span></p>
+            </div>)
+        })}
+        </>
+    );
 }
 
 export default MassageFaceComponent;
