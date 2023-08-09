@@ -24,7 +24,7 @@ export default function Home(data: any) {
       <Navbar navbar={dataSanity.navbar} />
       <Header />
       <Section css={cssBackground.section1} name={dataSanity.sectionTitle[0].title} description={dataSanity.sectionTitle[0].description} massageData={massageData} />
-
+      <Section css={cssBackground.section2} name={dataSanity.sectionTitle[1].title} description={dataSanity.sectionTitle[1].description} />
     </main>
   )
 }
@@ -41,7 +41,7 @@ export async function getStaticProps(context: any) {
   const img = `*[_type == "pet"]{
     "imageUrl": Image.asset->url
   }`;
-  const sectionTitle = `*[_type == 'section-title']`;
+  const sectionTitle = `*[_type == 'section-title']  | order(_createdAt asc)`;
   const faceMassageQuery = `*[_type == 'faceMassage']`;
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
