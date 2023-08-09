@@ -15,6 +15,7 @@ export default function Home(data: any) {
 
   let dataSanity = data.data;
   const massageData = dataSanity.faceMassage;
+  console.log(dataSanity)
   console.log('NavList')
   console.log(massageData)
 
@@ -22,7 +23,7 @@ export default function Home(data: any) {
     <main >
       <Navbar navbar={dataSanity.navbar} />
       <Header />
-      <Section css={cssBackground.section1} massageData={massageData} />
+      <Section css={cssBackground.section1} name={dataSanity.sectionTitle[0].title} description={dataSanity.sectionTitle[0].description} massageData={massageData} />
 
     </main>
   )
