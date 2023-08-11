@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import styles from './MassageFaceComponent.module.scss'
+import styles from './MassageFaceComponent.module.scss';
+import { BiTimeFive } from "react-icons/bi";
+import { FaMoneyBillWave } from "react-icons/fa"
 
 interface test {
     label: string,
@@ -20,7 +22,7 @@ const MassageFaceComponent = (props: any) => {
                 <p>{item.etapDescription}</p>
                 <h3>{item.effects}</h3>
                 <p>{item.effectsDescription}</p>
-                <p>{item.time} <span>{item.price}</span></p>
+                <p><BiTimeFive fontSize={40} className="icon_time" /> {item.time} <FaMoneyBillWave fontSize={40} className="icon_money" /> <span>{item.price}</span></p>
             </div>)
         })}
         </>
