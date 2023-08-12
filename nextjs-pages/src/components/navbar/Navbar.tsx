@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from './Navbar.module.scss';
 import logo from '../../assets/logo1.png';
 import Image from "next/image";
+import { FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa'
 
 const Navbar = (navbar: any) => {
     const [navList, setNavList] = useState(navbar)
@@ -12,6 +13,10 @@ const Navbar = (navbar: any) => {
         <nav className={styles.navbar}>
             <div className={styles.navbar_wrapper}>
                 <div className="hamburger"></div>
+                <div className="social">
+                    <FaFacebookSquare fontSize={30} />
+                    <FaInstagramSquare fontSize={30} />
+                </div>
                 <ol className={styles.navbar_list}>    {navList && navList.navbar.map((item: any, index: any) => {
                     return (
                         <li key={index}>{item.link}</li>

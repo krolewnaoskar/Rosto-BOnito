@@ -1,6 +1,8 @@
 import styles from './Header.module.scss';
 import logo from '../../assets/logo1.png';
 import Image from "next/image";
+import { FaRegCalendarAlt, FaPhoneAlt } from 'react-icons/fa'
+import { BsPhone } from 'react-icons/bs'
 
 const Header = (props: any) => {
     return (
@@ -31,7 +33,7 @@ const Header = (props: any) => {
                 <h2>Każdy ruch to cel</h2>
             </div>
             <div className={styles.header_phone}>
-                <p>+48530907750</p>
+                <p ><span className={styles.icon_phone}><FaPhoneAlt /></span>530907750</p> <a href="" className={styles.booksy_link}>Zarezerwuj <span className={styles.icon_calendar}><FaRegCalendarAlt /></span></a>
             </div>
         </header>
     )
