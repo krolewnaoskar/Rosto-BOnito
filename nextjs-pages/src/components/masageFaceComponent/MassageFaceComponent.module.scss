@@ -4,6 +4,10 @@
 
     span {
         color: rgb(199, 25, 199);
+
+        &.icon_wrapper {
+            margin-right: 10px;
+        }
     }
 
     p {

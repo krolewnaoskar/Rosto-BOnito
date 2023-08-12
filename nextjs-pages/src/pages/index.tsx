@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar/Navbar";
 import Header from "@/components/header/Header";
 import Image from "next/image";
 import Section from "@/components/section/Section";
+import MassageFaceComponent from "@/components/masageFaceComponent/MassageFaceComponent";
+import ClassicMassageComponent from "@/components/classicMassageComponent/ClassicMassageCompoent";
 
 const cssBackground = {
   section1: 'face_massage',
@@ -13,8 +15,9 @@ const cssBackground = {
 
 export default function Home(data: any) {
 
-  let dataSanity = data.data;
+  const dataSanity = data.data;
   const massageData = dataSanity.faceMassage;
+  const classicData = dataSanity.classicMassage;
   console.log(dataSanity)
   console.log('NavList')
   console.log(massageData)
@@ -23,8 +26,9 @@ export default function Home(data: any) {
     <main >
       <Navbar navbar={dataSanity.navbar} />
       <Header />
-      <Section css={cssBackground.section1} name={dataSanity.sectionTitle[0].title} description={dataSanity.sectionTitle[0].description} massageData={massageData} />
-      <Section css={cssBackground.section2} name={dataSanity.sectionTitle[1].title} description={dataSanity.sectionTitle[1].description} />
+      <Section css={cssBackground.section1} name={dataSanity.sectionTitle[0].title} description={dataSanity.sectionTitle[0].description} massageData={massageData} > <MassageFaceComponent messageData={massageData} /> </Section>
+      <Section css={cssBackground.section2} name={dataSanity.sectionTitle[1].title} description={dataSanity.sectionTitle[1].description} ><ClassicMassageComponent classicData={classicData}></ClassicMassageComponent></Section>
+      <Section css={cssBackground.section3} name={dataSanity.sectionTitle[4].title}></Section>
     </main>
   )
 }
@@ -43,6 +47,7 @@ export async function getStaticProps(context: any) {
   }`;
   const sectionTitle = `*[_type == 'section-title']  | order(_createdAt asc)`;
   const faceMassageQuery = `*[_type == 'faceMassage']`;
+  const classicMassage = `*[_type == 'classicMassage']`;
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const navbar = await client.fetch(queryNavbar
@@ -52,6 +57,7 @@ export async function getStaticProps(context: any) {
   const imgFetch = await client.fetch(img)
   const sectionTitleFetch = await client.fetch(sectionTitle);
   const faceMassageFetch = await client.fetch(faceMassageQuery);
+  const classicMassageFetch = await client.fetch(classicMassage);
 
   return {
     props: {
@@ -60,7 +66,8 @@ export async function getStaticProps(context: any) {
         'home': home,
         'imgUlr': imgFetch,
         'sectionTitle': sectionTitleFetch,
-        'faceMassage': faceMassageFetch
+        'faceMassage': faceMassageFetch,
+        'classicMassage': classicMassageFetch
       }
     }
   }

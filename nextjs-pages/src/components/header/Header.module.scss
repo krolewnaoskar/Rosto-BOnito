@@ -78,5 +78,41 @@ $gold: #EECC7A;
         justify-content: center;
         align-items: center;
         text-align: center;
+        font-family: Roboto, sans-serif;
+
+        p {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon_calendar {
+            margin-left: 5px;
+        }
+
+        .icon_phone {
+            display: inline-block;
+            height: 42px;
+            color: goldenrod;
+            margin-right: 10px;
+        }
+    }
+
+    .booksy_link {
+        display: inline-block;
+        height: 40px;
+        background: #fa243c;
+        padding: 18px 32px;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 40px;
+        border-radius: 10px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        border-color: #fa243c;
+
+        &:hover {
+            opacity: 0.9
+        }
     }
 }

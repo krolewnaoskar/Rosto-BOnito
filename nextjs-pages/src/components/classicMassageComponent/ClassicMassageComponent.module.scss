@@ -1,0 +1,42 @@
+.classic_massage {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding-top: 20px;
+    gap: 20px;
+    font-family: 'Roboto', sans-serif;
+
+    &__title {
+        color: #000100
+    }
+
+    h3 {
+        margin: 0
+    }
+}
+
+.price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.classic_info {
+    text-align: center;
+
+    p {
+        font-size: 2rem;
+    }
+}
+
+.classic_info__phone {
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        margin-left: 10px;
+        text-decoration: none;
+        color: #000100;
+    }
+}
