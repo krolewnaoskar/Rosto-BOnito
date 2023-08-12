@@ -80,6 +80,11 @@ $gold: #EECC7A;
         text-align: center;
         font-family: Roboto, sans-serif;
 
+        p {
+            display: flex;
+            align-items: center;
+        }
+
         .icon_calendar {
             margin-left: 5px;
         }
@@ -87,8 +92,8 @@ $gold: #EECC7A;
         .icon_phone {
             display: inline-block;
             height: 42px;
-            color: green;
-            margin-right: 5px;
+            color: goldenrod;
+            margin-right: 10px;
         }
     }
 

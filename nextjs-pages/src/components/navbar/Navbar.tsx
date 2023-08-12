@@ -12,7 +12,7 @@ const Navbar = (navbar: any) => {
     return (
         <nav className={styles.navbar}>
             <div className={styles.navbar_wrapper}>
-                <div className="hamburger"></div>
+                <div className={styles.hamburger}></div>
                 <div className="social">
                     <FaFacebookSquare fontSize={30} />
                     <FaInstagramSquare fontSize={30} />
