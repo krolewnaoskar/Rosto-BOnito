@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Header from "@/components/header/Header";
 import Image from "next/image";
 import Section from "@/components/section/Section";
+import MassageFaceComponent from '../components/masageFaceComponent/MassageFaceComponent'
 
 const cssBackground = {
   section1: 'face_massage',
@@ -23,7 +24,7 @@ export default function Home(data: any) {
     <main >
       <Navbar navbar={dataSanity.navbar} />
       <Header />
-      <Section css={cssBackground.section1} name={dataSanity.sectionTitle[0].title} description={dataSanity.sectionTitle[0].description} massageData={massageData} />
+      <Section css={cssBackground.section1} name={dataSanity.sectionTitle[0].title} description={dataSanity.sectionTitle[0].description} massageData={massageData} > <MassageFaceComponent messageData={massageData} /> </Section>
       <Section css={cssBackground.section2} name={dataSanity.sectionTitle[1].title} description={dataSanity.sectionTitle[1].description} />
     </main>
   )

@@ -11,7 +11,8 @@ const Section = (props: any) => {
     return (
         <section className={`${styles.section_main} ${styles[cssBackground]}`}>
             <SectionTitle name={props.name} description={props.description}></SectionTitle>
-            <MassageFaceComponent messageData={data} />
+
+            {props.children}
 
         </section>
 
