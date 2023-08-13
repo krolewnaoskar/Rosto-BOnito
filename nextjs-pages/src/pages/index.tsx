@@ -47,7 +47,8 @@ export async function getStaticProps(context: any) {
   }`;
   const sectionTitle = `*[_type == 'section-title']  | order(_createdAt asc)`;
   const faceMassageQuery = `*[_type == 'faceMassage']`;
-  const classicMassage = `*[_type == 'classicMassage']`;
+  const classicMassage = `*[_type == 'classicMassage'] | order(_createdAt asc)`;
+
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const navbar = await client.fetch(queryNavbar
