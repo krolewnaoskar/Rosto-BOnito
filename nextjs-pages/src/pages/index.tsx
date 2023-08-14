@@ -19,7 +19,7 @@ export default function Home(data: any) {
   const massageData = dataSanity.faceMassage;
   const classicData = dataSanity.classicMassage;
   console.log(dataSanity)
-  console.log('NavList')
+  console.log('MassageData')
   console.log(massageData)
 
   return (
@@ -59,6 +59,10 @@ export async function getStaticProps(context: any) {
   const sectionTitleFetch = await client.fetch(sectionTitle);
   const faceMassageFetch = await client.fetch(faceMassageQuery);
   const classicMassageFetch = await client.fetch(classicMassage);
+  const testFetch = await client.fetch(`{
+    'query':${query},
+    'faceMassageQuery': ${faceMassageQuery}
+  }`)
 
   return {
     props: {
@@ -68,7 +72,8 @@ export async function getStaticProps(context: any) {
         'imgUlr': imgFetch,
         'sectionTitle': sectionTitleFetch,
         'faceMassage': faceMassageFetch,
-        'classicMassage': classicMassageFetch
+        'classicMassage': classicMassageFetch,
+        'content': testFetch
       }
     }
   }
