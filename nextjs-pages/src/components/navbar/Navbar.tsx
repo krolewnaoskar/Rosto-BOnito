@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from './Navbar.module.scss';
 import logo from '../../assets/logo1.png';
 import Image from "next/image";
-import { FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa'
+import { FaFacebookSquare, FaInstagram } from 'react-icons/fa'
 
 const Navbar = (navbar: any) => {
     const [navList, setNavList] = useState(navbar)
@@ -13,9 +13,9 @@ const Navbar = (navbar: any) => {
         <nav className={styles.navbar}>
             <div className={styles.navbar_wrapper}>
                 <div className={styles.hamburger}></div>
-                <div className="social">
-                    <FaFacebookSquare fontSize={30} />
-                    <FaInstagramSquare fontSize={30} />
+                <div className={styles.social}>
+                    <a href="https://www.facebook.com/profile.php?id=100089487401402"><FaFacebookSquare fontSize={30} /></a>
+                    <a href="https://instagram.com/rosto_bonito_massage?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"> <FaInstagram fontSize={30} className="icon_insta" /></a>
                 </div>
                 <ol className={styles.navbar_list}>    {navList && navList.navbar.map((item: any, index: any) => {
                     return (

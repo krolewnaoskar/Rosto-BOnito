@@ -33,7 +33,7 @@ const Header = (props: any) => {
                 <h2>Każdy ruch to cel</h2>
             </div>
             <div className={styles.header_phone}>
-                <p ><span className={styles.icon_phone}><FaPhoneAlt /></span>530907750</p> <a href="" className={styles.booksy_link}>Zarezerwuj <span className={styles.icon_calendar}><FaRegCalendarAlt /></span></a>
+                <p ><span className={styles.icon_phone}><FaPhoneAlt /></span>530907750</p> <a href="http://rostobonitomassage.booksy.com" className={styles.booksy_link}>Zarezerwuj <span className={styles.icon_calendar}><FaRegCalendarAlt /></span></a>
             </div>
         </header>
     )
