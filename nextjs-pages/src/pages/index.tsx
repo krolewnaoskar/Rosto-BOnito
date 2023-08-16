@@ -43,6 +43,7 @@ export async function getStaticProps(context: any) {
   }`;
   const sectionTitle = `*[_type == 'section-title']  | order(_createdAt asc)`;
   const faceMassageQuery = `*[_type == 'faceMassage']`;
+  const richText = `*[_type == 'myRichTextExample']`;
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const navbar = await client.fetch(queryNavbar
@@ -52,6 +53,7 @@ export async function getStaticProps(context: any) {
   const imgFetch = await client.fetch(img)
   const sectionTitleFetch = await client.fetch(sectionTitle);
   const faceMassageFetch = await client.fetch(faceMassageQuery);
+  const richTextFetch = await client.fetch(richText)
 
   return {
     props: {
@@ -60,7 +62,8 @@ export async function getStaticProps(context: any) {
         'home': home,
         'imgUlr': imgFetch,
         'sectionTitle': sectionTitleFetch,
-        'faceMassage': faceMassageFetch
+        'faceMassage': faceMassageFetch,
+        'richText': richTextFetch
       }
     }
   }
