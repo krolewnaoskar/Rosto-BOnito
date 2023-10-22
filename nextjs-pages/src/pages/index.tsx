@@ -13,6 +13,7 @@ import Image from "next/image";
 import Section from "@/components/section/Section";
 import MassageFaceComponent from "@/components/masageFaceComponent/MassageFaceComponent";
 import ClassicMassageComponent from "@/components/classicMassageComponent/ClassicMassageCompoent";
+import BeforeMassageComponent from "@/components/beforeMassageComponent/beforeMassageComponent";
 
 const cssBackground = {
   section1: "face_massage",
@@ -59,6 +60,7 @@ export default function Home(data: any) {
         name={dataSanity.sectionTitle[4].title}
       >
         <p>{beforeMassageData[0].title}</p>
+        <BeforeMassageComponent beforeMassage={ beforeMassageData}/>
       </Section>
     </main>
   );
