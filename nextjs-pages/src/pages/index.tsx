@@ -13,12 +13,13 @@ import Image from "next/image";
 import Section from "@/components/section/Section";
 import MassageFaceComponent from "@/components/masageFaceComponent/MassageFaceComponent";
 import ClassicMassageComponent from "@/components/classicMassageComponent/ClassicMassageCompoent";
-import BeforeMassageComponent from "@/components/beforeMassageComponent/beforeMassageComponent";
+import BeforeMassageComponent from "@/components/beforeMassageComponent/BeforeMassageComponent";
 
 const cssBackground = {
   section1: "face_massage",
   section2: "classic_massage",
   section3: "before_massage",
+  section4: "contact_massage"
 };
 
 export default function Home(data: any) {
@@ -27,7 +28,8 @@ export default function Home(data: any) {
   const classicData = dataSanity.classicMassage;
   const beforeMassageData = dataSanity.beforeMassage;
 
-  // console.log(dataSanity)
+  console.log('Pelne dane')
+   console.log(dataSanity)
   //  console.log('NavList')
   // console.log(massageData)
   console.log("BeforeMassageComponent");
@@ -59,9 +61,9 @@ export default function Home(data: any) {
         css={cssBackground.section3}
         name={dataSanity.sectionTitle[4].title}
       >
-        <p>{beforeMassageData[0].title}</p>
-        <BeforeMassageComponent beforeMassage={ beforeMassageData}/>
+        <BeforeMassageComponent beforeMassage={beforeMassageData} />
       </Section>
+      <Section name={dataSanity.sectionTitle[2].title} css={cssBackground.section4}></Section>
     </main>
   );
 }
