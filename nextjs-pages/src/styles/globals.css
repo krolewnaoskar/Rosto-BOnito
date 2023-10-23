@@ -13,14 +13,6 @@ h1 {
     font-weight: 700;
 }
 
-h2 {font-size: 2rem;}
+h2 {font-size:     2rem;} 
 
-main {
-    max-width: 1986px;
-    margin: 0 auto;
-}
 
-main .wrapper {
-    width: 100%;
-    padding:20px;
-}

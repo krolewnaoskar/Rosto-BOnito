@@ -13,7 +13,7 @@ import Image from "next/image";
 import Section from "@/components/section/Section";
 import MassageFaceComponent from "@/components/masageFaceComponent/MassageFaceComponent";
 import ClassicMassageComponent from "@/components/classicMassageComponent/ClassicMassageCompoent";
-import BeforeMassageComponent from "@/components/beforeMassageComponent/BeforeMassageComponent";
+import BeforeMassageComponent from "@/components/beforeMassageComponent/beforeMassageComponent";
 
 const cssBackground = {
   section1: "face_massage",
@@ -93,6 +93,10 @@ export async function getStaticProps(context: any) {
   const sectionTitleFetch = await client.fetch(sectionTitle);
   const faceMassageFetch = await client.fetch(faceMassageQuery);
   const classicMassageFetch = await client.fetch(classicMassage);
+  const testFetch = await client.fetch(`{
+    'query':${query},
+    'faceMassageQuery': ${faceMassageQuery}
+  }`)
   const beforeMassageFetch = await client.fetch(beforeMassage);
 
   console.log("BeforeMasage");
