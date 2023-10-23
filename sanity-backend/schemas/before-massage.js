@@ -23,6 +23,11 @@ export default {
     name:'description',
     type:'string',
     title:'Opis przeciwskazania'
+   },
+   {
+    name:'info',
+    type:'string',
+    title:'Info'
    }
   ],
 }
