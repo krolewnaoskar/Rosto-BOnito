@@ -1,4 +1,4 @@
-// schemas/navbar.js
+// schemas/contact.js
 export default {
     name: 'contact',
     type: 'document',
