@@ -10,24 +10,24 @@ export default {
       title: 'Opis 1 ',
     },
     {
-        name:'afterMassage',
-        type: 'string',
-        title: 'Po masażu'
+      name: 'afterMassage',
+      type: 'string',
+      title: 'Po masażu',
     },
-   {
-    name:'contraindications',
-    type:'string',
-    title:'Przeciwskazania tytul'
-   },
-   {
-    name:'description',
-    type:'string',
-    title:'Opis przeciwskazania'
-   },
-   {
-    name:'info',
-    type:'string',
-    title:'Info'
-   }
+    {
+      name: 'contraindications',
+      type: 'string',
+      title: 'Przeciwskazania tytul',
+    },
+    {
+      name: 'description',
+      type: 'string',
+      title: 'Opis przeciwskazania',
+    },
+    {
+      name: 'info',
+      type: 'string',
+      title: 'Info',
+    },
   ],
 }

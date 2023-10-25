@@ -14,12 +14,12 @@ const ContactComponent = (props: any) => {
         <FiPhone fontSize={36} className="icon_pink" />{" "}
         <span className="phone">{state.phone}</span>
       </p>
-      <FiMapPin font-Size={36} className="icon_pink" />{" "}
+      <FiMapPin fontSize={36} className="icon_pink" />{" "}
       <span>
         {state.city} {state.street}
       </span>
       <p>
-        <MdAlternateEmail font-size={36} className="icon_pink" />
+        <MdAlternateEmail fontSize={36} className="icon_pink" />
       </p>
     </div>
   );
