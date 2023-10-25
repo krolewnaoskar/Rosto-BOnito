@@ -14,6 +14,7 @@ import Section from "@/components/section/Section";
 import MassageFaceComponent from "@/components/masageFaceComponent/MassageFaceComponent";
 import ClassicMassageComponent from "@/components/classicMassageComponent/ClassicMassageCompoent";
 import BeforeMassageComponent from "@/components/beforeMassageComponent/BeforeMassageComponent";
+import ContactComponent from "@/components/contactComponent/ContactComponent";
 
 const cssBackground = {
   section1: "face_massage",
@@ -27,6 +28,7 @@ export default function Home(data: any) {
   const massageData = dataSanity.faceMassage;
   const classicData = dataSanity.classicMassage;
   const beforeMassageData = dataSanity.beforeMassage;
+  const contact = dataSanity.contact;
 
   console.log('Pelne dane')
    console.log(dataSanity)
@@ -63,7 +65,9 @@ export default function Home(data: any) {
       >
         <BeforeMassageComponent beforeMassage={beforeMassageData} />
       </Section>
-      <Section name={dataSanity.sectionTitle[2].title} css={cssBackground.section4}></Section>
+      <Section name={dataSanity.sectionTitle[2].title} css={cssBackground.section4}>
+        <ContactComponent contact={contact}/>
+      </Section>
     </main>
   );
 }
@@ -84,6 +88,7 @@ export async function getStaticProps(context: any) {
   const faceMassageQuery = `*[_type == 'faceMassage']`;
   const classicMassage = `*[_type == 'classicMassage'] | order(_createdAt asc)`;
   const beforeMassage = `*[_type == 'beforeMassage'] | order(_createdAt asc)`;
+  const contact = `*[_type == 'contact']`;
 
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -94,6 +99,7 @@ export async function getStaticProps(context: any) {
   const faceMassageFetch = await client.fetch(faceMassageQuery);
   const classicMassageFetch = await client.fetch(classicMassage);
   const beforeMassageFetch = await client.fetch(beforeMassage);
+  const contactFetch = await client.fetch(contact)
 
   console.log("BeforeMasage");
   console.log(beforeMassageFetch);
@@ -107,6 +113,7 @@ export async function getStaticProps(context: any) {
         faceMassage: faceMassageFetch,
         classicMassage: classicMassageFetch,
         beforeMassage: beforeMassageFetch,
+        contact: contactFetch
       },
     },
   };
