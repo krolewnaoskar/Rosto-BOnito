@@ -29,6 +29,7 @@ export default function Home(data: any) {
   const classicData = dataSanity.classicMassage;
   const beforeMassageData = dataSanity.beforeMassage;
   const contact = dataSanity.contact;
+  const aboutData = dataSanity.about
 
   console.log('Pelne dane')
    console.log(dataSanity)
@@ -89,6 +90,7 @@ export async function getStaticProps(context: any) {
   const classicMassage = `*[_type == 'classicMassage'] | order(_createdAt asc)`;
   const beforeMassage = `*[_type == 'beforeMassage'] | order(_createdAt asc)`;
   const contact = `*[_type == 'contact']`;
+  const about = `*[_type == 'about']`
 
   //get data with SANITY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -99,7 +101,8 @@ export async function getStaticProps(context: any) {
   const faceMassageFetch = await client.fetch(faceMassageQuery);
   const classicMassageFetch = await client.fetch(classicMassage);
   const beforeMassageFetch = await client.fetch(beforeMassage);
-  const contactFetch = await client.fetch(contact)
+  const contactFetch = await client.fetch(contact);
+  const aboutFetch = await client.fetch(about);
 
   console.log("BeforeMasage");
   console.log(beforeMassageFetch);
@@ -113,7 +116,8 @@ export async function getStaticProps(context: any) {
         faceMassage: faceMassageFetch,
         classicMassage: classicMassageFetch,
         beforeMassage: beforeMassageFetch,
-        contact: contactFetch
+        contact: contactFetch,
+        about:aboutFetch
       },
     },
   };

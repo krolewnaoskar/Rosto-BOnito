@@ -10,17 +10,26 @@ const ContactComponent = (props: any) => {
   console.log(state);
   return (
     <div className={styles.contact}>
-      <p>
+      <p className={styles.contact__phone}>
         <FiPhone fontSize={36} className="icon_pink" />{" "}
         <span className="phone">{state.phone}</span>
       </p>
-      <FiMapPin font-Size={36} className="icon_pink" />{" "}
-      <span>
-        {state.city} {state.street}
-      </span>
-      <p>
-        <MdAlternateEmail font-size={36} className="icon_pink" />
+      <div className={styles.contact__adress}>
+        <div className="adress__pin">
+          <FiMapPin fontSize={36} className="icon_pink" />{" "}
+        </div>
+        <div className={styles.contact__adress__name}>
+          <p> {state.city} </p>
+          <p> {state.street}</p>
+          <p> {state.street2}</p>
+        </div>
+      </div>
+
+      <p className={styles.contact__phone}>
+        <MdAlternateEmail fontSize={36} className="icon_pink" />{" "}
+        <span>{state.email}</span>
       </p>
+      <section></section>
     </div>
   );
 };
