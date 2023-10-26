@@ -1,7 +1,28 @@
 .contact {
-   font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 
-   p {
-    font-size: 1.5rem
-   }
+  p {
+    font-size: 1.25rem;
+  }
+  &__phone {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  &__adress {
+    display: flex;
+    align-items: center;
+
+    &__name {
+      margin-left: 10px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
 }
