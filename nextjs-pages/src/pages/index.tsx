@@ -37,6 +37,8 @@ export default function Home(data: any) {
   // console.log(massageData)
   console.log("BeforeMassageComponent");
   console.log(beforeMassageData);
+  console.log('TITLE3')
+  console.log(dataSanity.sectionTitle[3].title)
 
   return (
     <main>
@@ -67,7 +69,7 @@ export default function Home(data: any) {
         <BeforeMassageComponent beforeMassage={beforeMassageData} />
       </Section>
       <Section name={dataSanity.sectionTitle[2].title} css={cssBackground.section4}>
-        <ContactComponent contact={contact}/>
+        <ContactComponent  contact={contact} name={dataSanity.sectionTitle[3].title} about={aboutData}/>
       </Section>
     </main>
   );

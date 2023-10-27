@@ -3,11 +3,15 @@ import styles from "./ContactComponent.module.scss";
 
 import { FiMapPin, FiPhone } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
+import AboutComponent from "../aboutComponent/AboutComponent";
 
 const ContactComponent = (props: any) => {
   const [state, setState] = useState(props.contact[0]);
+  const [title,setStateTitle] = useState(props.name)
   console.log("KONTAKT DANE");
   console.log(state);
+  console.log('Title Contact')
+  console.log(title)
   return (
     <div className={styles.contact}>
       <p className={styles.contact__phone}>
@@ -29,7 +33,7 @@ const ContactComponent = (props: any) => {
         <MdAlternateEmail fontSize={36} className="icon_pink" />{" "}
         <span>{state.email}</span>
       </p>
-      <section></section>
+      <AboutComponent title={title} about={props.about}/>
     </div>
   );
 };

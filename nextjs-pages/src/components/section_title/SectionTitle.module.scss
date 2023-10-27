@@ -1,9 +1,18 @@
+@import '../../styles/media';
 .section_title {
     color: rgb(6, 6, 92);
 
     h2 {
         font-size: 42px;
         margin-bottom: 20px;
+
+        @include tablet{
+            color: red;
+        }
+
+        @include desktop {
+            color: green;
+        }
     }
 
     P {
