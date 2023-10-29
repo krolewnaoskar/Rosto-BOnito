@@ -4,6 +4,7 @@ import styles from "./Navbar.module.scss";
 import logo from "../../assets/logo1.png";
 import Image from "next/image";
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
+import {FiMenu} from "react-icons/fi"
 
 const Navbar = (navbar: any) => {
   const [navList, setNavList] = useState(navbar);
@@ -11,8 +12,9 @@ const Navbar = (navbar: any) => {
   console.log(navbar);
   return (
     <nav className={styles.navbar}>
+       <div className={styles.hamburger}><FiMenu fontSize={26}/></div>
       <div className={styles.navbar_wrapper}>
-        <div className={styles.hamburger}></div>
+       
         <div className={styles.social}>
           <a href="https://www.facebook.com/profile.php?id=100089487401402">
             <FaFacebookSquare fontSize={30} />
