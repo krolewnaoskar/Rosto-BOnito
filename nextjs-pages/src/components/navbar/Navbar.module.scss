@@ -17,6 +17,10 @@
     align-items: center;
     display: none;
 
+   &_active {
+        display: flex
+    }
+
     @include tablet {
       display: flex;
       flex-direction: row;
