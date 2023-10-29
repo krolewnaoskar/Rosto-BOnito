@@ -1,5 +1,5 @@
 //@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import '../../styles/media.scss';
 $gold: #EECC7A;
 
 .header {
@@ -24,8 +24,12 @@ $gold: #EECC7A;
             width: 100%;
             text-align: center;
             letter-spacing: 6px;
-            font-size: 92px;
+            font-size: 52px;
             margin-bottom: 20px;
+
+            @include tablet {
+                font-size: 92px;
+            }
 
 
             &+h2 {
@@ -37,31 +41,53 @@ $gold: #EECC7A;
     }
 
     .description {
-        width: 60%;
+        
         padding-top: 10px;
         margin: 0 auto;
         border-top: 2px solid goldenrod;
 
+        @include tablet {
+            width:60%;
+        }
 
         h2 {
             margin-top: 40px;
             text-align: center;
-            font-size: 56px;
+            font-size: 42px;
+
+            @include tablet {
+                width:60%;
+                font-size: 56px
+            }
         }
     }
 
     .description_second {
-        width: 60%;
+        
         margin: 0 auto;
+
+        @include tablet {
+            width: 60%;
+        }
 
         h2 {
             color: goldenrod;
             font-weight: 200;
             text-align: center;
-            font-size: 62px;
+            font-size: 44px;
             letter-spacing: 8px;
             margin: 60px 0 60px;
             padding-bottom: 40px;
+
+            @include tablet {
+                
+                font-size: 56px
+            }
+
+            @include tablet {
+                width:60%;
+                font-size: 62px
+            }
         }
     }
 
@@ -73,12 +99,18 @@ $gold: #EECC7A;
         margin-right: -20px;
         margin-left: -20px;
         margin-top: 80px;
-        font-size: 42px;
+        font-size: 32px;
         display: flex;
         justify-content: center;
+        flex-direction: column;
         align-items: center;
         text-align: center;
         font-family: Roboto, sans-serif;
+
+        @include mobile {
+            font-size: 44px;
+            flex-direction: row;
+        }
 
         p {
             display: flex;
