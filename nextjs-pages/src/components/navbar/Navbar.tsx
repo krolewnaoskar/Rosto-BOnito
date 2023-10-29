@@ -10,6 +10,8 @@ const Navbar = (navbar: any) => {
   const [navList, setNavList] = useState(navbar);
   const [menu, setMenu] = useState(false);
 
+  let navFlag = menu;
+
   const menuTrigger = () => {
     setMenu(!menu);
   };
@@ -20,7 +22,7 @@ const Navbar = (navbar: any) => {
       </div>
       <div
         className={
-          menu
+          menu === false
             ? `${styles.navbar_wrapper}`
             : `${styles.navbar_wrapper} ${styles.navbar_wrapper_active}`
         }
@@ -42,7 +44,7 @@ const Navbar = (navbar: any) => {
             })}
         </ol>
 
-        <div className="navbar_logo">
+        <div className={styles.navbar_logo}>
           <Image
             alt="Mountains"
             // Importing an image will
