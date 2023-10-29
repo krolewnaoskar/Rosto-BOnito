@@ -4,15 +4,29 @@ import styles from "./Navbar.module.scss";
 import logo from "../../assets/logo1.png";
 import Image from "next/image";
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = (navbar: any) => {
   const [navList, setNavList] = useState(navbar);
-  console.log("NAV compoent");
-  console.log(navbar);
+  const [menu, setMenu] = useState(false);
+
+  let navFlag = menu;
+
+  const menuTrigger = () => {
+    setMenu(!menu);
+  };
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navbar_wrapper}>
-        <div className={styles.hamburger}></div>
+      <div className={styles.hamburger}>
+        <FiMenu fontSize={26} onClick={menuTrigger} />
+      </div>
+      <div
+        className={
+          menu === false
+            ? `${styles.navbar_wrapper}`
+            : `${styles.navbar_wrapper} ${styles.navbar_wrapper_active}`
+        }
+      >
         <div className={styles.social}>
           <a href="https://www.facebook.com/profile.php?id=100089487401402">
             <FaFacebookSquare fontSize={30} />
@@ -30,7 +44,7 @@ const Navbar = (navbar: any) => {
             })}
         </ol>
 
-        <div className="navbar_logo">
+        <div className={styles.navbar_logo}>
           <Image
             alt="Mountains"
             // Importing an image will

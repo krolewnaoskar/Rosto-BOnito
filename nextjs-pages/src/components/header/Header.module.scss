@@ -1,150 +1,150 @@
 //@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import '../../styles/media.scss';
-$gold: #EECC7A;
+@import "../../styles/media.scss";
+$gold: #eecc7a;
 
 .header {
-    background-image: url('../../assets/rosto-bonito.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 20px 20px 0 20px;
-    font-family: 'Aboreto', sans-serif;
+  background-image: url("../../assets/rosto-bonito.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 20px 0 20px;
+  font-family: "Aboreto", sans-serif;
 
-    &_title {
-        display: flex;
-        align-items: center;
+  &_title {
+    display: flex;
+    align-items: center;
 
-        .content_title {
-            width: 100%;
-            color: goldenrod;
-            padding-right: 100px;
-        }
-
-        .main_title {
-            width: 100%;
-            text-align: center;
-            letter-spacing: 6px;
-            font-size: 52px;
-            margin-bottom: 20px;
-
-            @include tablet {
-                font-size: 92px;
-            }
-
-
-            &+h2 {
-                text-align: center;
-                letter-spacing: 8px;
-
-            }
-        }
+    .content_title {
+      width: 100%;
+      color: goldenrod;
+      padding-right: 100px;
     }
 
-    .description {
-        
-        padding-top: 10px;
-        margin: 0 auto;
-        border-top: 2px solid goldenrod;
+    .main_title {
+      width: 100%;
+      text-align: center;
+      letter-spacing: 6px;
+      font-size: 52px;
+      margin-bottom: 20px;
 
-        @include tablet {
-            width:60%;
-        }
+      @include tablet {
+        font-size: 92px;
+      }
 
-        h2 {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 42px;
-
-            @include tablet {
-                width:60%;
-                font-size: 56px
-            }
-        }
-    }
-
-    .description_second {
-        
-        margin: 0 auto;
-
-        @include tablet {
-            width: 60%;
-        }
-
-        h2 {
-            color: goldenrod;
-            font-weight: 200;
-            text-align: center;
-            font-size: 44px;
-            letter-spacing: 8px;
-            margin: 60px 0 60px;
-            padding-bottom: 40px;
-
-            @include tablet {
-                
-                font-size: 56px
-            }
-
-            @include tablet {
-                width:60%;
-                font-size: 62px
-            }
-        }
-    }
-
-    &_phone {
-        position: relative;
-        bottom: 0;
-        height: 160px;
-        background: rgba(255, 255, 255, 0.4178046218) 35%;
-        margin-right: -20px;
-        margin-left: -20px;
-        margin-top: 80px;
-        font-size: 32px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+      & + h2 {
         text-align: center;
-        font-family: Roboto, sans-serif;
+        letter-spacing: 8px;
+      }
+    }
+  }
 
-        @include mobile {
-            font-size: 44px;
-            flex-direction: row;
-        }
+  .description {
+    padding-top: 10px;
+    margin: 0 auto;
+    border-top: 2px solid goldenrod;
 
-        p {
-            display: flex;
-            align-items: center;
-        }
-
-        .icon_calendar {
-            margin-left: 5px;
-        }
-
-        .icon_phone {
-            display: inline-block;
-            height: 42px;
-            color: goldenrod;
-            margin-right: 10px;
-        }
+    @include tablet {
+      width: 60%;
     }
 
-    .booksy_link {
-        display: inline-block;
-        height: 40px;
-        background: #fa243c;
-        padding: 18px 32px;
-        color: #fff;
-        text-decoration: none;
+    h2 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 42px;
+
+      @include tablet {
+        font-size: 56px;
+      }
+    }
+  }
+
+  .description_second {
+    margin: 0 auto;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    h2 {
+      color: goldenrod;
+      font-weight: 200;
+      text-align: center;
+      font-size: 44px;
+      letter-spacing: 8px;
+      margin: 60px 0 60px;
+      padding-bottom: 40px;
+
+      @include tablet {
+        font-size: 56px;
+      }
+
+      @include tablet {
+        font-size: 62px;
+      }
+    }
+  }
+
+  &_phone {
+    position: relative;
+    bottom: 0;
+   
+    background: rgba(255, 255, 255, 0.4178046218) 35%;
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-top: 80px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+
+    @include mobile {
+      font-size: 44px;
+      flex-direction: row;
+      height: 160px;
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+
+    .icon_calendar {
+      margin-left: 5px;
+    }
+
+    .icon_phone {
+      display: inline-block;
+      height: 42px;
+      color: goldenrod;
+    margin-right: 10px;
+    }
+  }
+
+  .booksy_link {
+    display: inline-block;
+    height: 40px;
+    background: #fa243c;
+    padding: 18px 32px;
+    color: #fff;
+    text-decoration: none;
+   
+    border-radius: 10px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    border-color: #fa243c;
+    margin-bottom: 40px;
+
+    @include mobile {
         margin-left: 40px;
-        border-radius: 10px;
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-        border-color: #fa243c;
-
-        &:hover {
-            opacity: 0.9
-        }
+        margin-bottom:0
     }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }
